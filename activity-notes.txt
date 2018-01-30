@@ -1,0 +1,138 @@
+Daksha Agarwal and Chen Pekker
+1/30/18
+
+Git Intro Activity
+
+D1. What does git help do?
+It gives you a list of common git commands and their definitions. 
+
+D2. What does -ag cause git help to do?
+This provides you with a full list of git commands, without definitions. 
+
+
+
+E1. What are these commands doing?
+These commands configured the global username and email for our machines. 
+
+E2. What is the purpose of --global?
+It allows you to save this information so that you don't need to rewrite it every time. 
+
+
+
+F1. By default any file that starts with . is hidden. How do you display a hidden file?
+use this command: ls -a
+
+F2. Run this command to show the hidden files in the current directory. Are there any?
+yes, we saw some hidden files.
+
+
+F4. .git was created.
+
+F5. If we delete .git the version control information for the repo will be gone, however, the code and other data will remain. 
+
+F6. you should run ls -a to see if it has a .git file in the folder. If it does, then it does have version control. Otherwise, it's not on git. 
+
+
+G1. git status gives you the information about any changes that were made to the repo or any uncommitted things. 
+
+G2. Added this file into the repo.
+
+G3. What does git commit -m "Add our names." do?
+commits the changes to our repo and adds a commit message. 
+
+G4. git add . adds everything that's not in the repo yet but in the folder that we're in. 
+
+G5. git commit gives you the option to add a commit message before committing. 
+
+G6. git commit because you have as much space as you need to add a message. 
+
+G7. git log gives the running records of commits. 
+
+
+H1. Below write each file name under the state that its changes are currently in. Compose a definition for each state.
+
+Staged: edited, added but not committed
+names.txt
+
+Unstaged: edited, not added and not committed
+movies.txt
+
+Untracked: not in the repo
+food.txt
+
+
+H2. If you run git commit what changes will be committed (don't do it)?
+Only the tracked changes, so names.txt and movies.txt will be committed. 
+
+H3. What command do you run to stage changes?
+git add "filename"
+
+H4. What command do you run to unstage changes?
+git reset <filePath>
+
+
+H1. git diff shows the changes we made in the movie.txt (not added but edited)
+
+H2. git diff --cached displays the changes in the added (not committed yet) files, so in this case, names.txt
+
+H3. Formulate a sequence of commands to unstage changes to names.txt, and stage the changes to movies.txt. Execute your commands and confirm they worked.
+
+commands:
+
+git reset names.txt
+git add movies.txt
+git status
+
+
+H4. Edit movies.txt, change any one of the movies, and save it. Then run git status. What do you observe? Explain what you think is going on.
+Now movies.txt is both in staged (old version) and unstaged (new, not added version), since we changed it but haven't staged it yet.
+
+H5. Delete names.txt. Then run git status. What do you observe? Explain what you think is going on.
+It shows up as deleted in git status. 
+
+H6. Rename movies.txt to last-movies. Run git status. Observe and explain.
+It displays the old file name as deleted and the new file name as an untracked file.
+
+H7. Formulate a sequence of commands to stage all changes including the untracked file and commit (with any reasonable message you like). Execute them.
+
+commands:
+git add .
+git commit -m "committing all the changes" 
+
+H8.In git vernacular, index, cache, and stage all refer to the same thing. What does it hold?
+All these mean that something is ready to be committed but is not committed yet. 
+
+H9. Why have a stage? Why not just commit all changes since the last commit?
+Because you could accidentally commit something you don't want. 
+
+
+I1. What does git reset --soft ``"HEAD^"do?
+changes where the head points
+
+I2. What is the difference between --hard and --soft?
+hard also changes the index and the working repo, whereas soft does not. 
+
+I3. What do you think HEAD means?
+Which branch were at currently. 
+
+I4. What do you think HEAD^ means?
+this is the first parent commit of where we are currently (the head)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
